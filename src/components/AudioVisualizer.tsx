@@ -9,7 +9,7 @@ export const AudioVisualizer = ({ audioElement, isPlaying }: AudioVisualizerProp
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
   const analyserRef = useRef<AnalyserNode | null>(null);
-  const dataArrayRef = useRef<Uint8Array | null>(null);
+  const dataArrayRef = useRef<Uint8Array<ArrayBuffer> | null>(null);
 
   useEffect(() => {
     if (!audioElement || !canvasRef.current) return;
